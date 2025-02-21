@@ -19,6 +19,7 @@ import ScrollToTop from "./components/ScrollToTop.js";
 import { AuthProvider, useAuth } from "./context/AuthContext.js";
 import { FavoritesProvider } from "./context/FavoritesContext.js";
 import { NotificationsProvider } from "./context/NotificationsContext.js";
+
 import "./i18n.js";
 import ZakatCalculator from './components/ZakatCalculator.js';
 import SadaqahPage from './pages/SadaqahPage.js';
