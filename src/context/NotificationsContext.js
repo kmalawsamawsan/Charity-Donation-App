@@ -9,23 +9,16 @@ export const NotificationsProvider = ({ children }) => {
 
   // دالة لإضافة إشعار جديد
   const addNotification = (notification) => {
-    setNotifications((prevNotifications) => [
-      ...prevNotifications,
-      notification,
-    ]);
+    setNotifications((prevNotifications) => [...prevNotifications, notification]);
   };
 
   // دالة لإزالة إشعار
   const removeNotification = (id) => {
-    setNotifications((prevNotifications) =>
-      prevNotifications.filter((notification) => notification.id !== id)
-    );
+    setNotifications((prevNotifications) => prevNotifications.filter((notification) => notification.id !== id));
   };
 
   return (
-    <NotificationsContext.Provider
-      value={{ notifications, addNotification, removeNotification }}
-    >
+    <NotificationsContext.Provider value={{ notifications, addNotification, removeNotification }}>
       {children}
     </NotificationsContext.Provider>
   );
@@ -35,9 +28,7 @@ export const NotificationsProvider = ({ children }) => {
 export const useNotifications = () => {
   const context = useContext(NotificationsContext);
   if (!context) {
-    throw new Error(
-      "useNotifications must be used within a NotificationsProvider"
-    );
+    throw new Error("useNotifications must be used within a NotificationsProvider");
   }
   return context;
 };
