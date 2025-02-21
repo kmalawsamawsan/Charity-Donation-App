@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import DonationsPage from "./pages/DonationsPage";
@@ -105,18 +105,6 @@ const AppContent = () => {
 };
 
 const App = () => {
-  // تحميل مكتبة PayPal SDK
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = `https://www.paypal.com/sdk/js?client-id=${process.env.REACT_APP_PAYPAL_CLIENT_ID}&currency=SAR`;
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script); // تنظيف الكود عند إلغاء التحميل
-    };
-  }, []);
-
   return (
     <AuthProvider>
       <BrowserRouter>

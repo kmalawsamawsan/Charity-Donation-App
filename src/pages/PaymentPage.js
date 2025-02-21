@@ -60,29 +60,13 @@ const PaymentForm = ({ donationAmount, projectId, projectName }) => {
     setError(null);
 
     try {
-      const response = await axios.post(
-        "https://api.sandbox.paypal.com/v2/checkout/orders",
-        {
-          intent: "CAPTURE",
-          purchase_units: [
-            {
-              amount: {
-                currency_code: "SAR",
-                value: donationAmount,
-              },
-            },
-          ],
-        },
-        {
-          auth: {
-            username: process.env.REACT_APP_PAYPAL_CLIENT_ID,
-            password: process.env.REACT_APP_PAYPAL_SECRET,
-          },
-        }
-      );
+      const response = await axios.post("http://localhost:5000/api/paypal/create-order", {
+        amount: donationAmount,
+        currency: "SAR",
+      });
 
-      const { id } = response.data;
-      window.location.href = `https://www.sandbox.paypal.com/checkoutnow?token=${id}`;
+      const { orderID } = response.data;
+      window.location.href = `https://www.sandbox.paypal.com/checkoutnow?token=${orderID}`;
     } catch (error) {
       console.error("حدث خطأ أثناء معالجة الدفع باستخدام PayPal:", error);
       setError("حدث خطأ أثناء معالجة الدفع باستخدام PayPal.");
@@ -100,7 +84,7 @@ const PaymentForm = ({ donationAmount, projectId, projectName }) => {
       const response = await axios.post("http://localhost:5000/api/skrill/create-payment", {
         amount: donationAmount,
         currency: "SAR",
-        email: "sb-fo1zr37402305@personal.example.com", // البريد الإلكتروني الصحيح
+        email: "user@example.com", // استبدل هذا بالبريد الإلكتروني للمستخدم
       });
 
       const { paymentUrl } = response.data;
@@ -122,7 +106,7 @@ const PaymentForm = ({ donationAmount, projectId, projectName }) => {
       const response = await axios.post("http://localhost:5000/api/payoneer/create-payment", {
         amount: donationAmount,
         currency: "SAR",
-        email: "sb-fo1zr37402305@personal.example.com", // البريد الإلكتروني الصحيح
+        email: "user@example.com", // استبدل هذا بالبريد الإلكتروني للمستخدم
       });
 
       const { paymentUrl } = response.data;

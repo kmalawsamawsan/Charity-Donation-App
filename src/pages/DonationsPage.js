@@ -30,7 +30,7 @@ const DonationsPage = () => {
       location: "منطقة مكة المكرمة",
       beneficiaries: 4,
       targetAmount: 20800,
-      currentAmount: 0,
+      currentAmount: 9542,
       image: "/logo.png",
       tags: ["صدقة", "تبرع"]
     },

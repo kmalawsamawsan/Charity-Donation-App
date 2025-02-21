@@ -11,7 +11,6 @@ const morgan = require('morgan');
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const Stripe = require('stripe');
-const axios = require('axios'); // إضافة axios للتعامل مع PayPal API
 
 // إعداد السيرفر
 const app = express();
@@ -290,6 +289,7 @@ app.post('/api/donations', async (req, res) => {
 
   try {
     // إدراج التبرع في قاعدة البيانات
+    
     const result = await pool.query(
       `INSERT INTO donations (user_id, project_id, amount, payment_method, transaction_id, status, created_at)
        VALUES ($1, $2, $3, $4, $5, $6, NOW()) RETURNING *`,
@@ -342,38 +342,6 @@ app.post('/stripe-webhook', async (req, res) => {
     }
   } else {
     res.status(400).send('حدث خطأ');
-  }
-});
-
-// نقطة نهاية لإنشاء طلب PayPal
-app.post('/api/paypal/create-order', async (req, res) => {
-  const { amount, currency } = req.body;
-
-  try {
-    const response = await axios.post(
-      'https://api.sandbox.paypal.com/v2/checkout/orders',
-      {
-        intent: 'CAPTURE',
-        purchase_units: [{
-          amount: {
-            currency_code: currency,
-            value: amount,
-          },
-        }],
-      },
-      {
-        auth: {
-          username: process.env.PAYPAL_CLIENT_ID, // استخدام القيم من ملف .env
-          password: process.env.PAYPAL_SECRET, // استخدام القيم من ملف .env
-        },
-      }
-    );
-
-    const orderID = response.data.id;
-    res.json({ orderID });
-  } catch (error) {
-    console.error("حدث خطأ أثناء إنشاء طلب PayPal:", error);
-    res.status(500).send("حدث خطأ أثناء إنشاء طلب PayPal.");
   }
 });
 

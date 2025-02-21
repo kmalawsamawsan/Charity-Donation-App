@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, Bell, Languages, User, ChevronDown, Heart, Gift, Users, Calculator, Calendar, BookOpen, Home, Info, Phone } from 'lucide-react';
+import { Menu, Bell, Languages, User, ChevronDown } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 const Header = ({ setIsSidebarOpen }) => {
@@ -39,25 +39,25 @@ const Header = ({ setIsSidebarOpen }) => {
   };
 
   const donationCategories = [
-    { ar: 'صدقة', en: 'Sadaqah', path: '/sadaqah', icon: <Heart className="h-5 w-5 text-green-600" /> },
-    { ar: 'زكاة', en: 'Zakat', path: '/zakat', icon: <Gift className="h-5 w-5 text-green-600" /> },
-    { ar: 'الأيتام', en: 'Orphans', path: '/orphans', icon: <Users className="h-5 w-5 text-green-600" /> },
-    { ar: 'كفارة', en: 'Kaffarah', path: '/kaffarah', icon: <BookOpen className="h-5 w-5 text-green-600" /> },
-    { ar: 'الأنعام', en: 'Livestock', path: '/livestock', icon: <Home className="h-5 w-5 text-green-600" /> },
-    { ar: 'الأوقاف', en: 'Waqf', path: '/waqf', icon: <Info className="h-5 w-5 text-green-600" /> },
+    { ar: 'صدقة', en: 'Sadaqah', path: '/sadaqah' },
+    { ar: 'زكاة', en: 'Zakat', path: '/zakat' },
+    { ar: 'الأيتام', en: 'Orphans', path: '/orphans' },
+    { ar: 'كفارة', en: 'Kaffarah', path: '/kaffarah' },
+    { ar: 'الأنعام', en: 'Livestock', path: '/livestock' },
+    { ar: 'الأوقاف', en: 'Waqf', path: '/waqf' },
   ];
 
   const serviceCategories = [
-    { ar: 'التبرع الدوري', en: 'Recurring Donation', icon: <Calendar className="h-5 w-5 text-green-600" /> },
-    { ar: 'حاسبة الزكاة', en: 'Zakat Calculator', path: '/zakat-calculator', icon: <Calculator className="h-5 w-5 text-green-600" /> },
-    { ar: 'الحملات', en: 'Campaigns', icon: <Heart className="h-5 w-5 text-green-600" /> },
+    { ar: 'التبرع الدوري', en: 'Recurring Donation' },
+    { ar: 'حاسبة الزكاة', en: 'Zakat Calculator', path: '/zakat-calculator' },
+    { ar: 'الحملات', en: 'Campaigns' },
   ];
 
   const renderDropdownMenu = (items, isVisible) => {
     if (!isVisible) return null;
     return (
       <div
-        className="absolute top-full right-0 mt-2 bg-white border rounded-lg shadow-lg py-2 min-w-max transform transition-transform duration-300 hover:scale-105"
+        className="absolute top-full right-0 mt-2 bg-white border rounded-lg shadow-lg py-2 min-w-max"
         onMouseEnter={() => handleMouseEnter(isVisible === showDonationMenu ? setShowDonationMenu : setShowServicesMenu)}
         onMouseLeave={() => handleMouseLeave(isVisible === showDonationMenu ? setShowDonationMenu : setShowServicesMenu)}
       >
@@ -66,10 +66,9 @@ const Header = ({ setIsSidebarOpen }) => {
             <Link
               key={index}
               to={item.path || `/${item.en.toLowerCase().replace(' ', '-')}`}
-              className="flex items-center gap-2 whitespace-nowrap text-gray-600 hover:text-green-600 hover:bg-gray-50 px-4 py-2 rounded-md text-lg transition-all duration-300 hover:shadow-md"
+              className="whitespace-nowrap text-gray-600 hover:text-green-600 hover:bg-gray-50 px-4 py-2 rounded-md text-lg"
             >
-              {item.icon} {/* إضافة الأيقونة */}
-              <span>{language === 'العربية' ? item.ar : item.en}</span>
+              {language === 'العربية' ? item.ar : item.en}
             </Link>
           ))}
         </div>
@@ -85,14 +84,16 @@ const Header = ({ setIsSidebarOpen }) => {
             <Menu className="h-6 w-6 text-gray-600" />
           </button>
           <Link to="/" className="flex items-center gap-2">
-            <img 
-              src="/logo1.png" 
-              alt="شعار قلوب رحيمة" 
-              className="h-20 w-20 rounded-full transition-transform duration-300 hover:scale-110 object-cover" 
-            />
+          <img 
+          src="/logo1.png" 
+          alt="شعار قلوب رحيمة" 
+          className="h-20 w-20 rounded-full transition-transform duration-300 hover:scale-110 object-cover" 
+          />
             <span className="text-2xl font-bold text-green-600">قلوب رحيمة</span>
           </Link>
         </div>
+
+        {/* تم حذف شريط البحث هنا */}
 
         <div className="flex items-center gap-4">
           {/* أيقونة الإشعارات */}
@@ -158,6 +159,12 @@ const Header = ({ setIsSidebarOpen }) => {
 
         {/* الروابط الأخرى */}
         <div className="flex gap-6">
+         {/*
+<Link to="/reports" className="text-gray-600 hover:text-green-600 text-lg">
+  {language === 'العربية' ? 'التقارير' : 'Reports'}
+</Link>
+*/}
+
           <Link to="/about" className="text-gray-600 hover:text-green-600 text-lg">
             {language === 'العربية' ? 'عن المنصة' : 'About the Platform'}
           </Link>

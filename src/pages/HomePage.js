@@ -118,27 +118,6 @@ const HomePage = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // دالة معالجة الدفع باستخدام PayPal
-  const handlePayPalPayment = async () => {
-    setLoading(true);
-    setError(null);
-
-    try {
-      const response = await axios.post('/api/paypal/create-order', {
-        amount: donationAmount,
-        currency: 'SAR',
-      });
-
-      const { orderID } = response.data;
-      window.location.href = `https://www.sandbox.paypal.com/checkoutnow?token=${orderID}`;
-    } catch (error) {
-      console.error("حدث خطأ أثناء معالجة الدفع باستخدام PayPal:", error);
-      setError("حدث خطأ أثناء معالجة الدفع باستخدام PayPal.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gray-100">
       {/* الشريط العلوي مع التبويبات */}
@@ -199,48 +178,50 @@ const HomePage = () => {
       </header>
 
       {/* محتوى الصفحة */}
-      <main className="container mx-auto px-4 pt-24 pb-12">
-        {/* قسم الإعلان المتحرك */}
-        <div className="mb-8 relative overflow-hidden h-96 rounded-lg">
-          <Swiper
-            spaceBetween={0}
-            centeredSlides={true}
-            autoplay={{
-              delay: 8000, // تغيير الصورة كل ثمان ثوانٍ
-              disableOnInteraction: false,
-            }}
-            pagination={{ clickable: true }}
-            navigation={true}
-            className="h-full"
+    
+⌄
+{/* محتوى الصفحة */}
+<main className="container mx-auto px-4 pt-24 pb-12">
+  {/* قسم الإعلان المتحرك */}
+  <div className="mb-8 relative overflow-hidden h-96 rounded-lg">
+        <Swiper
+          spaceBetween={0}
+          centeredSlides={true}
+          autoplay={{
+            delay: 8000, // تغيير الصورة كل ثمان ثوانٍ
+            disableOnInteraction: false,
+          }}
+          pagination={{ clickable: true }}
+          navigation={true}
+          className="h-full"
+        >
+          <SwiperSlide>
+            <img src="/advertisement.png" alt="إعلان" className="w-full h-full object-cover" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/b.png" alt="إعلان" className="w-full h-full object-cover" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/c.png" alt="إعلان" className="w-full h-full object-cover" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/d.png" alt="إعلان" className="w-full h-full object-cover" />
+          </SwiperSlide>
+        </Swiper>
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 p-6 text-center z-20">
+          <h2 className="text-white text-3xl font-bold mb-4">سراً وعلانيةً</h2>
+          <p className="text-white text-lg mb-6">
+            تعدّ المنصة الوطنية للتبرعات الحل الأسهل والآمن لإيصال التبرع إلى المحتاج في شتى مناطق ومدن المملكة من خلال عملية تبرع شفافة تحت مظلة وزارة الموارد البشرية والتنمية الاجتماعية.
+          </p>
+          <Link
+            to="/donations"
+            className="bg-green-600 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-green-700 transition duration-300"
+            style={{ zIndex: 10 }}
           >
-            <SwiperSlide>
-              <img src="/advertisement.png" alt="إعلان" className="w-full h-full object-cover" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/b.png" alt="إعلان" className="w-full h-full object-cover" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/c.png" alt="إعلان" className="w-full h-full object-cover" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/d.png" alt="إعلان" className="w-full h-full object-cover" />
-            </SwiperSlide>
-          </Swiper>
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 p-6 text-center z-20">
-            <h2 className="text-white text-3xl font-bold mb-4">سراً وعلانيةً</h2>
-            <p className="text-white text-lg mb-6">
-              تعدّ المنصة الوطنية للتبرعات الحل الأسهل والآمن لإيصال التبرع إلى المحتاج في شتى مناطق ومدن المملكة من خلال عملية تبرع شفافة تحت مظلة وزارة الموارد البشرية والتنمية الاجتماعية.
-            </p>
-            <Link
-              to="/donations"
-              className="bg-green-600 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-green-700 transition duration-300"
-              style={{ zIndex: 10 }}
-            >
-              تبرع الآن
-            </Link>
-          </div>
+            تبرع الآن
+          </Link>
         </div>
-
+      </div>
         {/* قسم الإحصاءات */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="bg-white p-6 rounded-lg shadow-md text-center">
@@ -378,6 +359,7 @@ const HomePage = () => {
                 </button>
               </div>
             </div>
+
             {/* مشروع 3: سلة رمضان المبارك */}
             <div className="bg-white p-6 rounded-lg shadow-md">
               <img
