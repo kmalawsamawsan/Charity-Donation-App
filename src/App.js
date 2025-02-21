@@ -1,3 +1,5 @@
+import React from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "./pages/HomePage.js";
 import DonationsPage from "./pages/DonationsPage.js";
 import BeneficiariesPage from "./pages/BeneficiariesPage.js";
@@ -29,8 +31,8 @@ import AssociationsPage from "./pages/AssociationsPage.js";
 import NotificationsSettingsPage from "./pages/notifications-settings.js";
 import SponsorshipPage from './pages/SponsorshipPage.js';
 import PolicyPage from './pages/PolicyPage.js';
-import AdminDashboard from "./pages/AdminDashboard.js"; // صفحة لوحة تحكم المسؤول
-import CampaignsPage from './pages/Campaigns.js'; // تحديث استيراد صفحة الحملات
+import AdminDashboard from "./pages/AdminDashboard.js";
+import CampaignsPage from './pages/Campaigns.js';
 import Navbar from './components/Navbar.js';
 import ManualPayment from './components/ManualPayment.js';
 
