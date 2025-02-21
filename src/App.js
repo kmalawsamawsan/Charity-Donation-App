@@ -1,40 +1,38 @@
-import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import DonationsPage from "./pages/DonationsPage";
-import BeneficiariesPage from "./pages/BeneficiariesPage";
-import SettingsPage from "./pages/SettingsPage";
-import Auth from "./pages/Auth";
-import ReportsPage from "./pages/ReportsPage";
-import ContactPage from "./pages/ContactPage";
-import ServicesPage from "./pages/ServicesPage";
-import AboutPage from "./pages/AboutPage";
-import PaymentPage from "./pages/PaymentPage";
-import NotFound from "./pages/NotFound";
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
-import BottomNav from "./components/BottomNav";
-import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop";
-import { AuthProvider, useAuth } from "./context/AuthContext";
-import { FavoritesProvider } from "./context/FavoritesContext";
-import { NotificationsProvider } from "./context/NotificationsContext";
-import "./i18n";
-import ZakatCalculator from './components/ZakatCalculator';
-import SadaqahPage from './pages/SadaqahPage';
-import ZakatPage from './pages/ZakatPage';
-import OrphansPage from './pages/OrphansPage';
-import KaffarahPage from './pages/KaffarahPage';
-import LivestockPage from './pages/LivestockPage';
-import WaqfPage from './pages/WaqfPage';
-import AssociationsPage from "./pages/AssociationsPage";
-import NotificationsSettingsPage from "./pages/notifications-settings";
-import SponsorshipPage from './pages/SponsorshipPage';
-import PolicyPage from './pages/PolicyPage';
-import AdminDashboard from "./pages/AdminDashboard"; // صفحة لوحة تحكم المسؤول
-import CampaignsPage from './pages/Campaigns'; // تحديث استيراد صفحة الحملات
-import Navbar from './components/Navbar';
-import ManualPayment from './components/ManualPayment';
+import HomePage from "./pages/HomePage.js";
+import DonationsPage from "./pages/DonationsPage.js";
+import BeneficiariesPage from "./pages/BeneficiariesPage.js";
+import SettingsPage from "./pages/SettingsPage.js";
+import Auth from "./pages/Auth.js";
+import ReportsPage from "./pages/ReportsPage.js";
+import ContactPage from "./pages/ContactPage.js";
+import ServicesPage from "./pages/ServicesPage.js";
+import AboutPage from "./pages/AboutPage.js";
+import PaymentPage from "./pages/PaymentPage.js";
+import NotFound from "./pages/NotFound.js";
+import Header from "./components/Header.js";
+import Sidebar from "./components/Sidebar.js";
+import BottomNav from "./components/BottomNav.js";
+import Footer from "./components/Footer.js";
+import ScrollToTop from "./components/ScrollToTop.js";
+import { AuthProvider, useAuth } from "./context/AuthContext.js";
+import { FavoritesProvider } from "./context/FavoritesContext.js";
+import { NotificationsProvider } from "./context/NotificationsContext.js";
+import "./i18n.js";
+import ZakatCalculator from './components/ZakatCalculator.js';
+import SadaqahPage from './pages/SadaqahPage.js';
+import ZakatPage from './pages/ZakatPage.js';
+import OrphansPage from './pages/OrphansPage.js';
+import KaffarahPage from './pages/KaffarahPage.js';
+import LivestockPage from './pages/LivestockPage.js';
+import WaqfPage from './pages/WaqfPage.js';
+import AssociationsPage from "./pages/AssociationsPage.js";
+import NotificationsSettingsPage from "./pages/notifications-settings.js";
+import SponsorshipPage from './pages/SponsorshipPage.js';
+import PolicyPage from './pages/PolicyPage.js';
+import AdminDashboard from "./pages/AdminDashboard.js"; // صفحة لوحة تحكم المسؤول
+import CampaignsPage from './pages/Campaigns.js'; // تحديث استيراد صفحة الحملات
+import Navbar from './components/Navbar.js';
+import ManualPayment from './components/ManualPayment.js';
 
 // مكون ProtectedRoute لحماية المسارات التي تتطلب تسجيل دخول المسؤول
 const ProtectedRoute = ({ children }) => {
