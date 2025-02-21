@@ -18,6 +18,9 @@ export default {
                 exclude: /node_modules/, // استثناء مجلد node_modules
                 use: {
                     loader: 'babel-loader', // محمل Babel لتحويل الشيفرة البرمجية
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-react']
+                    }
                 },
             },
             {
