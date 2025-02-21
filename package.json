@@ -24,6 +24,7 @@
     "express": "^4.21.2",
     "firebase": "^11.2.0",
     "fs": "^0.0.1-security",
+    "gh-pages": "^6.3.0",
     "i18next": "^24.2.1",
     "i18next-browser-languagedetector": "^8.0.2",
     "jsonwebtoken": "^9.0.2",
@@ -55,7 +56,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
