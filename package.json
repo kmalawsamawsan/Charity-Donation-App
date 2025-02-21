@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://kmalawsamawsan.github.io/Charity-Donation-App",
+  "type": "module",
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@paypal/checkout-server-sdk": "^1.0.3",
