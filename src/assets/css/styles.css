@@ -1,0 +1,25 @@
+/* ملف styles.css */
+
+/* لضمان وضوح الصور */
+.swiper-slide img {
+  -webkit-filter: none !important;
+  filter: none !important;
+}
+
+/* لضمان ظهور النص فوق الصور */
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  color: white;
+}
+
+/* تحسين وضوح الصور */
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}

@@ -1,0 +1,24 @@
+{
+    "settings": {
+      "title": "Settings",
+      "profile": "Profile",
+      "username": "Username",
+      "email": "Email",
+      "notifications": "Notifications Settings",
+      "donationNotifications": "Donation Notifications",
+      "serviceNotifications": "Service Notifications",
+      "enabled": "Enabled",
+      "disabled": "Disabled",
+      "privacy": "Privacy",
+      "whoCanSeeYourInfo": "Who can see your info",
+      "dataSharingSettings": "Data sharing settings",
+      "everyone": "Everyone",
+      "limited": "Limited",
+      "appearance": "Appearance",
+      "darkMode": "Dark Mode",
+      "lightMode": "Light Mode",
+      "changePassword": "Change Password",
+      "language": "Language",
+      "logout": "Logout"
+    }
+  }
