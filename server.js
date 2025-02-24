@@ -326,9 +326,12 @@ app.post('/stripe-webhook', async (req, res) => {
     const currency = paymentIntent.currency;
     const donor_email = paymentIntent.receipt_email;
 
+<<<<<<< HEAD
 
 
     
+=======
+>>>>>>> 08540592b9365da604e50a4cb054f7526d9d9623
     // حفظ التبرع في قاعدة البيانات
     try {
       const result = await pool.query(

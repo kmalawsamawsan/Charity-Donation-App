@@ -2,6 +2,14 @@
   "name": "charity-donation-app",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
+=======
+  "homepage": "https://kmalawsamawsan.github.io/Charity-Donation-App",
+  "type": "module",
+  "browser": {
+    "./context/NotificationsContext": "./context/NotificationsContext.js"
+  },
+>>>>>>> 08540592b9365da604e50a4cb054f7526d9d9623
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@paypal/checkout-server-sdk": "^1.0.3",
@@ -24,6 +32,10 @@
     "express": "^4.21.2",
     "firebase": "^11.2.0",
     "fs": "^0.0.1-security",
+<<<<<<< HEAD
+=======
+    "gh-pages": "^6.3.0",
+>>>>>>> 08540592b9365da604e50a4cb054f7526d9d9623
     "i18next": "^24.2.1",
     "i18next-browser-languagedetector": "^8.0.2",
     "jsonwebtoken": "^9.0.2",
@@ -55,7 +67,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+<<<<<<< HEAD
     "server": "nodemon server.js"
+=======
+    "server": "nodemon server.js",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
+>>>>>>> 08540592b9365da604e50a4cb054f7526d9d9623
   },
   "eslintConfig": {
     "extends": [
@@ -75,4 +93,8 @@
       "last 1 safari version"
     ]
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 08540592b9365da604e50a4cb054f7526d9d9623

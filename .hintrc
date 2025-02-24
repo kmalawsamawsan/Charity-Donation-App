@@ -6,5 +6,12 @@
     "defaults",
     "not ie 11",
     "not edge <= 128"
+<<<<<<< HEAD
   ]
+=======
+  ],
+  "hints": {
+    "meta-viewport": "off"
+  }
+>>>>>>> 08540592b9365da604e50a4cb054f7526d9d9623
 }

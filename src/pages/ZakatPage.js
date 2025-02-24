@@ -8,12 +8,19 @@ import CategoryProjects from '../components/CategoryProjects'; // استيراد
 const ZakatPage = () => {
   const { addCartNotification } = useNotifications();
   const [activeCategory, setActiveCategory] = useState("زكاة");
+<<<<<<< HEAD
+=======
+  const [donationAmount, setDonationAmount] = useState("");
+>>>>>>> 08540592b9365da604e50a4cb054f7526d9d9623
   const [showFilters, setShowFilters] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState("");
   const [selectedImpact, setSelectedImpact] = useState("");
   const [filteredProjects, setFilteredProjects] = useState([]); // حالة لتخزين المشاريع المصفاة
+<<<<<<< HEAD
   const [donationAmounts, setDonationAmounts] = useState({}); // حالة لتخزين مبالغ التبرع لكل مشروع
+=======
+>>>>>>> 08540592b9365da604e50a4cb054f7526d9d9623
   const navigate = useNavigate();
 
   const projects = [
@@ -84,8 +91,13 @@ const ZakatPage = () => {
     },
   ];
 
+<<<<<<< HEAD
   const handleDonateNow = (projectId, donationAmount) => {
     navigate('/payment', { state: { donationAmount, projectId } });
+=======
+  const handleDonateNow = () => {
+    navigate('/payment', { state: { donationAmount } });
+>>>>>>> 08540592b9365da604e50a4cb054f7526d9d9623
   };
 
   const handleFilterToggle = () => {
@@ -134,6 +146,7 @@ const ZakatPage = () => {
     setFilteredProjects(projects); // إعادة عرض جميع المشاريع
   };
 
+<<<<<<< HEAD
   const handleDonationAmountChange = (projectId, amount) => {
     setDonationAmounts((prev) => ({
       ...prev,
@@ -141,6 +154,8 @@ const ZakatPage = () => {
     }));
   };
 
+=======
+>>>>>>> 08540592b9365da604e50a4cb054f7526d9d9623
   const displayedProjects = filteredProjects.length > 0 ? filteredProjects : projects;
 
   return (
@@ -150,6 +165,7 @@ const ZakatPage = () => {
         <Tabs activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
 
         <div className="flex justify-between items-center mb-6">
+<<<<<<< HEAD
           <div className="p-4 bg-green-200 bg-opacity-30 rounded-lg shadow-md transform hover:scale-105 transition duration-300">
             <div className="flex items-center">
               <svg
@@ -167,6 +183,25 @@ const ZakatPage = () => {
             </div>
             <h3 className="text-1xl font-bold text-black-600 mt-2">طهر مالك وأدِ واجبك الإسلامي من خلال فرص الزكاة المتاحة. استخدم حاسبة الزكاة لحساب مقدار زكاتك بدقة وسهولة!</h3>
           </div>
+=======
+        <div className="p-4 bg-green-200 bg-opacity-30 rounded-lg shadow-md transform hover:scale-105 transition duration-300">
+  <div className="flex items-center">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 64 64"
+      fill="currentColor"
+      className="w-8 h-8 mr-2 text-green-600"
+    >
+      <circle cx="32" cy="32" r="30" />
+      <text x="32" y="37" fill="#fff" font-size="20" font-family="Arial" text-anchor="middle">زكاة</text>
+    </svg>
+    <h2 className="text-2xl font-bold text-green-600">زكاة</h2>
+  </div>
+  <h3 className="text-1xl font-bold text-black-600 mt-2">طهر مالك وأدِ واجبك الإسلامي من خلال فرص الزكاة المتاحة. استخدم حاسبة الزكاة لحساب مقدار زكاتك بدقة وسهولة!</h3>
+</div>
+>>>>>>> 08540592b9365da604e50a4cb054f7526d9d9623
 
           <button
             onClick={handleFilterToggle}
@@ -273,14 +308,23 @@ const ZakatPage = () => {
                     type="text"
                     className="border border-gray-300 rounded-lg px-2 py-1 text-sm"
                     placeholder="ر.س"
+<<<<<<< HEAD
                     value={donationAmounts[project.id] || ""}
                     onChange={(e) => handleDonationAmountChange(project.id, e.target.value)}
+=======
+                    value={donationAmount}
+                    onChange={(e) => setDonationAmount(e.target.value)}
+>>>>>>> 08540592b9365da604e50a4cb054f7526d9d9623
                   />
                 </div>
                 <div className="border-t border-gray-200 pt-4">
                   <div className="flex justify-between items-center">
                     <button
+<<<<<<< HEAD
                       onClick={() => handleDonateNow(project.id, donationAmounts[project.id])}
+=======
+                      onClick={handleDonateNow}
+>>>>>>> 08540592b9365da604e50a4cb054f7526d9d9623
                       className="bg-green-600 text-white py-2 px-4 rounded-lg flex items-center gap-2"
                     >
                       <Heart className="h-5 w-5" />
