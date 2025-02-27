@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 // إضافة التعليق لتجاهل التحذير حول المتغير غير المستخدم
 // eslint-disable-next-line no-unused-vars
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { Heart, MapPin, Users, Share, Copy, ShoppingCart, Filter } from 'lucide-react';
 import { useNotifications } from '../context/NotificationsContext';
