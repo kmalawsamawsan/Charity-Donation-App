@@ -35,6 +35,7 @@ import AdminDashboard from "./pages/AdminDashboard"; // صفحة لوحة تحك
 import CampaignsPage from './pages/Campaigns'; // تحديث استيراد صفحة الحملات
 import Navbar from './components/Navbar';
 
+import ManualPayment from './components/ManualPayment';
 
 /* eslint-disable-next-line no-unused-vars */
 import ProtectedRoute from './ProtectedRoute';
@@ -44,17 +45,11 @@ const AppContent = () => {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
   return (
     <div className="min-h-screen bg-gray-50 text-right" dir="rtl">
-      {/* Navbar */}
       <Navbar userRole={userRole} />
-      {/* Header مع زر لفتح/إغلاق Sidebar */}
       <Header setIsSidebarOpen={setIsSidebarOpen} />
-      {/* Sidebar مع حالة فتح/إغلاق */}
       <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
-      {/* ScrollToTop لتصفح سلس */}
       <ScrollToTop />
-      {/* تعريف Routes للتطبيق */}
       <Routes>
-        {/* المسارات العامة */}
         <Route path="/" element={<HomePage />} />
         <Route path="/donations" element={<DonationsPage />} />
         <Route path="/beneficiaries" element={<BeneficiariesPage />} />
@@ -76,11 +71,7 @@ const AppContent = () => {
         <Route path="/notifications-settings" element={<NotificationsSettingsPage />} />
         <Route path="/sponsorship/:id" element={<SponsorshipPage />} />
         <Route path="/policy" element={<PolicyPage />} />
-
-        {/* إضافة مسار حملة التبرعات */}
         <Route path="/campaigns" element={<CampaignsPage />} />
-
-        {/* المسارات الخاصة بالإدارة */}
         <Route
           path="/admin/dashboard"
           element={
@@ -89,13 +80,12 @@ const AppContent = () => {
             </ProtectedRoute>
           }
         />
-
-        {/* صفحة 404 */}
         <Route path="*" element={<NotFound />} />
       </Routes>
-      {/* Footer و BottomNav */}
       <Footer />
       <BottomNav />
+      {/* استخدام مكون ManualPayment */}
+      <ManualPayment />
     </div>
   );
 };
