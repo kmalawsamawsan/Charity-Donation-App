@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-/* eslint-disable-next-line no-unused-vars */
-import { Search, Filter, Heart, Home, AlertCircle, Users, Autoplay, Pagination, Navigation } from 'react-icons/fa';
+import { Search, Filter, Heart, Home, AlertCircle, Users } from 'react-icons/fa';
 import { Menu, Transition } from "@headlessui/react";
 import CountUp from "react-countup";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,23 +8,20 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import axios from "axios";
 
-const HomePage = () => {
+const HomePage = () => {}
   const [projects, setProjects] = useState([]); // لتخزين بيانات المشاريع
   const [loading, setLoading] = useState(true); // حالة التحميل
   const [error, setError] = useState(null); // حالة الأخطاء
-  /* eslint-disable-next-line no-unused-vars */
   const [activeTab, setActiveTab] = useState("all");
-  /* eslint-disable-next-line no-unused-vars */
   const [searchQuery, setSearchQuery] = useState("");
   const [donations, setDonations] = useState({
     available: 0, // عدد الفرص التبرعية المتاحة
     completed: 0, // الفرص المكتملة
     operations: 0, // عدد العمليات التبرعية
   });
-  /* eslint-disable-next-line no-unused-vars */
-  const [isCounting, setIsCounting] = useState(false); العداد
+  const [isCounting, setIsCounting] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true); // حالة التحكم في ظهور الشريط العلوي
-  const [donationAmount, setDonationAmount] = useState(""); // مبلغ التبرع المدخل
+  const [donationAmounts, setDonationAmounts] = useState({}); // لتخزين مبالغ التبرع لكل مشروع
   const navigate = useNavigate();
 
   // دالة لجلب بيانات المشاريع من الخادم
@@ -89,7 +85,6 @@ const HomePage = () => {
     };
   }, []);
 
-  /* eslint-disable-next-line no-unused-vars */
   const handleSearch = (query) => {
     setSearchQuery(query);
   };
@@ -103,11 +98,19 @@ const HomePage = () => {
 
   // تعديل دالة التبرع لنقل المبلغ إلى صفحة الدفع
   const handleDonate = (projectId, projectName) => {
-    if (donationAmount) {
-      navigate('/payment', { state: { donationAmount, projectName, projectId } }); // نقل المبلغ واسم المشروع
+    if (donationAmounts[projectId]) {
+      navigate('/payment', { state: { donationAmount: donationAmounts[projectId], projectName, projectId } }); // نقل المبلغ واسم المشروع
     } else {
       alert("يرجى إدخال مبلغ التبرع");
     }
+  };
+
+  // تحديث حالة التبرع لكل مشروع
+  const handleDonationAmountChange = (projectId, amount) => {
+    setDonationAmounts((prev) => ({
+      ...prev,
+      [projectId]: amount,
+    }));
   };
 
   // إظهار/إخفاء الشريط العلوي ببطء
@@ -122,7 +125,6 @@ const HomePage = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -525,6 +527,6 @@ const HomePage = () => {
       </main>
     </div>
   );
-};
+});
 
 export default HomePage;
