@@ -34,6 +34,8 @@ import PolicyPage from './pages/PolicyPage';
 import AdminDashboard from "./pages/AdminDashboard"; // صفحة لوحة تحكم المسؤول
 import CampaignsPage from './pages/Campaigns'; // تحديث استيراد صفحة الحملات
 import Navbar from './components/Navbar';
+// Add the following line where you want to use ManualPayment in AppContent component
+<ManualPayment />
 
 import ManualPayment from './components/ManualPayment';
 
