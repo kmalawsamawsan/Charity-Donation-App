@@ -34,9 +34,8 @@ import PolicyPage from './pages/PolicyPage';
 import AdminDashboard from "./pages/AdminDashboard"; // صفحة لوحة تحكم المسؤول
 import CampaignsPage from './pages/Campaigns'; // تحديث استيراد صفحة الحملات
 import Navbar from './components/Navbar';
-// Add the following line where you want to use ManualPayment in AppContent component
-<ManualPayment />
-
+// تعليق أو حذف السطر التالي
+// import ManualPayment from './components/ManualPayment';
 import ManualPayment from './components/ManualPayment';
 
 /* eslint-disable-next-line no-unused-vars */
