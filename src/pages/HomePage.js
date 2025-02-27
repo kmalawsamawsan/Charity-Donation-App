@@ -80,6 +80,7 @@ const HomePage = () => {
     document.body.appendChild(script);
 
     return () => {
+      // eslint-disable-next-line jsx-a11y/anchor-is-valid
       document.body.removeChild(script); // تنظيف الكود عند إلغاء التحميل
     };
   }, []);
