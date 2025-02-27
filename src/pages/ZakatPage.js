@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+// إضافة التعليق لتجاهل التحذير حول المتغير غير المستخدم
+// eslint-disable-next-line no-unused-vars
+import { Link } from 'react-router-dom';
+
 import { Heart, MapPin, Users, Share, Copy, ShoppingCart, Filter } from 'lucide-react';
 import { useNotifications } from '../context/NotificationsContext';
 import Tabs from '../components/Tabs'; // استيراد مكون التبويبات
