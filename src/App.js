@@ -37,6 +37,7 @@ import Navbar from './components/Navbar';
 // تعليق أو حذف السطر التالي
 // import ManualPayment from './components/ManualPayment';
 import ManualPayment from './components/ManualPayment';
+import ProtectedRoute from './components/ProtectedRoute';
 
 /* eslint-disable-next-line no-unused-vars */
 import ProtectedRoute from './ProtectedRoute';
