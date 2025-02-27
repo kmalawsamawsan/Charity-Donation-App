@@ -34,7 +34,12 @@ import PolicyPage from './pages/PolicyPage';
 import AdminDashboard from "./pages/AdminDashboard"; // صفحة لوحة تحكم المسؤول
 import CampaignsPage from './pages/Campaigns'; // تحديث استيراد صفحة الحملات
 import Navbar from './components/Navbar';
-import ManualPayment from './components/ManualPayment';
+/* eslint-disable-next-line no-unused-vars */
+import ManualPayment from './ManualPayment';
+
+/* eslint-disable-next-line no-unused-vars */
+import ProtectedRoute from './ProtectedRoute';
+
 
 // مكون ProtectedRoute لحماية المسارات التي تتطلب تسجيل دخول المسؤول
 const ProtectedRoute = ({ children }) => {

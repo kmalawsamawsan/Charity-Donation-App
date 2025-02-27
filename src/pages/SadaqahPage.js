@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+/* eslint-disable-next-line no-unused-vars */
+import { Link } from 'react-router-dom';
 import { Heart, MapPin, Users, Share, Copy, ShoppingCart, Filter } from 'lucide-react';
 import { useNotifications } from '../context/NotificationsContext';
 import Tabs from '../components/Tabs'; // استيراد مكون التبويبات
-import CategoryProjects from '../components/CategoryProjects'
 
+/* eslint-disable-next-line no-unused-vars */
+import CategoryProjects from '../components/CategoryProjects';
 
 
 const SadaqahPage = () => {

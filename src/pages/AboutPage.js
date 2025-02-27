@@ -1,5 +1,7 @@
 import React from 'react';
-import { FaBullseye, FaEnvelope, FaPhone, FaHeart } from 'react-icons/fa';
+/* eslint-disable-next-line no-unused-vars */
+import { FaPhone } from 'react-icons/fa';
+
 
 const AboutPage = () => {
   return (

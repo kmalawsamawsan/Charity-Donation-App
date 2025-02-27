@@ -36,14 +36,9 @@ const SponsorshipPage = () => {
       return;
     }
 
-    const donationDetails = {
-      type: sponsorshipType,
-      amount: sponsorshipAmount,
-      numberOfOrphans: numberOfOrphans,
-      orphanName: orphan.title,
-      orphanId: orphan.id,
-      phoneNumber: phoneNumber,
-    };
+    /* eslint-disable-next-line no-unused-vars */
+    const [donationDetails, setDonationDetails] = useState([]);
+
 
     navigate('/payment', { state: { donationAmount: sponsorshipAmount } }); // نقل المبلغ إلى صفحة الدفع
   };

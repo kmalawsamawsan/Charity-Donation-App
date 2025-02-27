@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Home, Settings, Heart, Mail, Phone, ArrowUp, X } from 'lucide-react';
+/* eslint-disable-next-line no-unused-vars */
+import { Home, Settings, Heart } from 'react-feather';
+
 
 const Footer = () => {
   const [showTerms, setShowTerms] = useState(false);

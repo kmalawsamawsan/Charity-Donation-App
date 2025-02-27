@@ -5,7 +5,9 @@ const ZakatCalculator = () => {
   const [goldWeight, setGoldWeight] = useState(0);
   const [goldPurity, setGoldPurity] = useState(24); // العيار الافتراضي
   const [silverWeight, setSilverWeight] = useState(0);
+  /* eslint-disable-next-line no-unused-vars */
   const [investmentValue, setInvestmentValue] = useState(0);
+
   const [speculativeStocksValue, setSpeculativeStocksValue] = useState(0);
   const [cashAmount, setCashAmount] = useState(0);
   const [investmentName, setInvestmentName] = useState('');

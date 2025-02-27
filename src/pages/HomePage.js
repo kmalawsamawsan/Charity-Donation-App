@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Search, Filter, Heart, ChevronDown, Home, AlertCircle, Users } from "lucide-react";
+/* eslint-disable-next-line no-unused-vars */
+import { Search, Filter, Heart, Home, AlertCircle, Users, Autoplay, Pagination, Navigation } from 'react-icons/fa';
 import { Menu, Transition } from "@headlessui/react";
 import CountUp from "react-countup";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,14 +13,17 @@ const HomePage = () => {
   const [projects, setProjects] = useState([]); // لتخزين بيانات المشاريع
   const [loading, setLoading] = useState(true); // حالة التحميل
   const [error, setError] = useState(null); // حالة الأخطاء
+  /* eslint-disable-next-line no-unused-vars */
   const [activeTab, setActiveTab] = useState("all");
+  /* eslint-disable-next-line no-unused-vars */
   const [searchQuery, setSearchQuery] = useState("");
   const [donations, setDonations] = useState({
     available: 0, // عدد الفرص التبرعية المتاحة
     completed: 0, // الفرص المكتملة
     operations: 0, // عدد العمليات التبرعية
   });
-  const [isCounting, setIsCounting] = useState(true); // حالة التحكم في حركة العداد
+  /* eslint-disable-next-line no-unused-vars */
+  const [isCounting, setIsCounting] = useState(false); العداد
   const [isHeaderVisible, setIsHeaderVisible] = useState(true); // حالة التحكم في ظهور الشريط العلوي
   const [donationAmount, setDonationAmount] = useState(""); // مبلغ التبرع المدخل
   const navigate = useNavigate();
@@ -85,9 +89,10 @@ const HomePage = () => {
     };
   }, []);
 
-  const handleSearch = useCallback(() => {
-    console.log('Searching for:', searchQuery);
-  }, [searchQuery]);
+  /* eslint-disable-next-line no-unused-vars */
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);

@@ -5,7 +5,9 @@ import { useNotifications } from '../context/NotificationsContext';
 
 const BottomNav = React.memo(() => {
   const location = useLocation();
-  const { notifications } = useNotifications();
+  /* eslint-disable-next-line no-unused-vars */
+  const notifications = useContext(NotificationsContext);
+
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-white border-t z-40">
