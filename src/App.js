@@ -40,16 +40,6 @@ import ManualPayment from './ManualPayment';
 /* eslint-disable-next-line no-unused-vars */
 import ProtectedRoute from './ProtectedRoute';
 
-
-// مكون ProtectedRoute لحماية المسارات التي تتطلب تسجيل دخول المسؤول
-const ProtectedRoute = ({ children }) => {
-  const adminToken = localStorage.getItem('adminToken');
-  if (!adminToken) {
-    return <Navigate to="/" />; // إعادة التوجيه إلى الصفحة الرئيسية إذا لم يكن هناك رمز مصادقة
-  }
-  return children;
-};
-
 const AppContent = () => {
   const { userRole } = useAuth(); // جلب userRole من سياق المصادقة
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
@@ -95,7 +85,9 @@ const AppContent = () => {
         <Route
           path="/admin/dashboard"
           element={
-            <AdminDashboard /> // جعل الصفحة متاحة للجميع دون حماية
+            <ProtectedRoute>
+              <AdminDashboard />
+            </ProtectedRoute>
           }
         />
 
