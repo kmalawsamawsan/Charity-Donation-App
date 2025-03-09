@@ -1,0 +1,10 @@
+[
+    { "id": 1, "title": "مشروع 1", "image_url": "a.png", "description": "وصف المشروع 1", "donation_progress": 30 },
+    { "id": 2, "title": "مشروع 2", "image_url": "b.png", "description": "وصف المشروع 2", "donation_progress": 50 },
+    { "id": 3, "title": "مشروع 3", "image_url": "c.png", "description": "وصف المشروع 3", "donation_progress": 70 },
+    { "id": 4, "title": "مشروع 4", "image_url": "d.png", "description": "وصف المشروع 4", "donation_progress": 20 },
+    { "id": 5, "title": "مشروع 5", "image_url": "f.png", "description": "وصف المشروع 5", "donation_progress": 90 },
+    { "id": 6, "title": "مشروع 6", "image_url": "e.png", "description": "وصف المشروع 6", "donation_progress": 40 },
+    { "id": 7, "title": "مشروع 7", "image_url": "a.png", "description": "وصف المشروع 7", "donation_progress": 60 }
+  ]
+  

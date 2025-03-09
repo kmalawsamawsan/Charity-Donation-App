@@ -1,0 +1,24 @@
+{
+    "settings": {
+      "title": "الإعدادات",
+      "profile": "الملف الشخصي",
+      "username": "اسم المستخدم",
+      "email": "البريد الإلكتروني",
+      "notifications": "إعدادات الإشعارات",
+      "donationNotifications": "إشعارات التبرعات",
+      "serviceNotifications": "إشعارات الخدمات",
+      "enabled": "مفعل",
+      "disabled": "غير مفعل",
+      "privacy": "الخصوصية",
+      "whoCanSeeYourInfo": "من يمكنه رؤية معلوماتك",
+      "dataSharingSettings": "إعدادات مشاركة البيانات",
+      "everyone": "الجميع",
+      "limited": "محدودة",
+      "appearance": "المظهر",
+      "darkMode": "الوضع الليلي",
+      "lightMode": "الوضع النهاري",
+      "changePassword": "تغيير كلمة المرور",
+      "language": "اللغة",
+      "logout": "تسجيل الخروج"
+    }
+  }
