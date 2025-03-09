@@ -31,16 +31,15 @@ import AssociationsPage from "./pages/AssociationsPage";
 import NotificationsSettingsPage from "./pages/notifications-settings";
 import SponsorshipPage from './pages/SponsorshipPage';
 import PolicyPage from './pages/PolicyPage';
-import AdminDashboard from "./pages/AdminDashboard"; // صفحة لوحة تحكم المسؤول
-import CampaignsPage from './pages/Campaigns'; // تحديث استيراد صفحة الحملات
+import AdminDashboard from "./pages/AdminDashboard";
+import CampaignsPage from './pages/Campaigns';
 import Navbar from './components/Navbar';
+import ManualPayment from './components/ManualPayment';
 
-
-// مكون ProtectedRoute لحماية المسارات التي تتطلب تسجيل دخول المسؤول
 const ProtectedRoute = ({ children }) => {
   const adminToken = localStorage.getItem('adminToken');
   if (!adminToken) {
-    return <Navigate to="/" />; // إعادة التوجيه إلى الصفحة الرئيسية إذا لم يكن هناك رمز مصادقة
+    return <Navigate to="/" />;
   }
   return children;
 };
@@ -82,19 +81,8 @@ const AppContent = () => {
         <Route path="/notifications-settings" element={<NotificationsSettingsPage />} />
         <Route path="/sponsorship/:id" element={<SponsorshipPage />} />
         <Route path="/policy" element={<PolicyPage />} />
-
-        {/* إضافة مسار حملة التبرعات */}
         <Route path="/campaigns" element={<CampaignsPage />} />
-
-        {/* المسارات الخاصة بالإدارة */}
-        <Route
-          path="/admin/dashboard"
-          element={
-            <AdminDashboard /> // جعل الصفحة متاحة للجميع دون حماية
-          }
-        />
-
-        {/* صفحة 404 */}
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       {/* Footer و BottomNav */}

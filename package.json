@@ -2,10 +2,15 @@
   "name": "charity-donation-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://kmalawsamawsan.github.io/Charity-Donation-App",
+  "type": "module",
+  "browser": {
+    "./context/NotificationsContext": "./context/NotificationsContext.js"
+  },
   "dependencies": {
+    "@babel/plugin-transform-private-property-in-object": "^7.25.9",
     "@headlessui/react": "^2.2.0",
-    "@paypal/checkout-server-sdk": "^1.0.3",
-    "@paypal/paypal-server-sdk": "^0.6.1",
+    "@paypal/paypal-server-sdk": "0.6.1",
     "@paypal/react-paypal-js": "^8.8.2",
     "@stripe/react-stripe-js": "^3.1.1",
     "@stripe/stripe-js": "^5.6.0",
@@ -24,6 +29,7 @@
     "express": "^4.21.2",
     "firebase": "^11.2.0",
     "fs": "^0.0.1-security",
+    "gh-pages": "^6.3.0",
     "i18next": "^24.2.1",
     "i18next-browser-languagedetector": "^8.0.2",
     "jsonwebtoken": "^9.0.2",
@@ -48,15 +54,16 @@
     "web-vitals": "^2.1.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9",
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.0"
+    "nodemon": "^3.1.9"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

@@ -143,23 +143,23 @@ const ZakatPage = () => {
         <Tabs activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
 
         <div className="flex justify-between items-center mb-6">
-        <div className="p-4 bg-green-200 bg-opacity-30 rounded-lg shadow-md transform hover:scale-105 transition duration-300">
-  <div className="flex items-center">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 64 64"
-      fill="currentColor"
-      className="w-8 h-8 mr-2 text-green-600"
-    >
-      <circle cx="32" cy="32" r="30" />
-      <text x="32" y="37" fill="#fff" font-size="20" font-family="Arial" text-anchor="middle">زكاة</text>
-    </svg>
-    <h2 className="text-2xl font-bold text-green-600">زكاة</h2>
-  </div>
-  <h3 className="text-1xl font-bold text-black-600 mt-2">طهر مالك وأدِ واجبك الإسلامي من خلال فرص الزكاة المتاحة. استخدم حاسبة الزكاة لحساب مقدار زكاتك بدقة وسهولة!</h3>
-</div>
+          <div className="p-4 bg-green-200 bg-opacity-30 rounded-lg shadow-md transform hover:scale-105 transition duration-300">
+            <div className="flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 64 64"
+                fill="currentColor"
+                className="w-8 h-8 mr-2 text-green-600"
+              >
+                <circle cx="32" cy="32" r="30" />
+                <text x="32" y="37" fill="#fff" fontSize="20" fontFamily="Arial" textAnchor="middle">زكاة</text>
+              </svg>
+              <h2 className="text-2xl font-bold text-green-600">زكاة</h2>
+            </div>
+            <h3 className="text-1xl font-bold text-black-600 mt-2">طهر مالك وأدِ واجبك الإسلامي من خلال فرص الزكاة المتاحة. استخدم حاسبة الزكاة لحساب مقدار زكاتك بدقة وسهولة!</h3>
+          </div>
 
           <button
             onClick={handleFilterToggle}

@@ -77,13 +77,13 @@ const SponsorshipPage = () => {
           </div>
           <p className="text-gray-600 mt-4">{orphan.description}</p>
           <div className="flex gap-4 mt-6">
-            <a  className="text-blue-600">
+            <a href="#" className="text-blue-600">
               <Facebook className="h-6 w-6" />
             </a>
-            <a  className="text-blue-400">
+            <a href="#" className="text-blue-400">
               <Twitter className="h-6 w-6" />
             </a>
-            <a className="text-pink-600">
+            <a href="#" className="text-pink-600">
               <Instagram className="h-6 w-6" />
             </a>
           </div>
@@ -94,17 +94,15 @@ const SponsorshipPage = () => {
           <div className="flex gap-4 mb-6">
             <button
               onClick={() => handleSponsorshipTypeChange("دورية")}
-              className={`py-2 px-4 rounded-lg ${
-                sponsorshipType === "دورية" ? "bg-green-600 text-white" : "bg-gray-200 text-gray-800"
-              }`}
+              className={`py-2 px-4 rounded-lg ${sponsorshipType === "دورية" ? "bg-green-600 text-white" : "bg-gray-200 text-gray-800"
+                }`}
             >
               كفالة دورية
             </button>
             <button
               onClick={() => handleSponsorshipTypeChange("واحدة")}
-              className={`py-2 px-4 rounded-lg ${
-                sponsorshipType === "واحدة" ? "bg-green-600 text-white" : "bg-gray-200 text-gray-800"
-              }`}
+              className={`py-2 px-4 rounded-lg ${sponsorshipType === "واحدة" ? "bg-green-600 text-white" : "bg-gray-200 text-gray-800"
+                }`}
             >
               كفالة واحدة
             </button>

@@ -289,7 +289,6 @@ app.post('/api/donations', async (req, res) => {
 
   try {
     // إدراج التبرع في قاعدة البيانات
-    
     const result = await pool.query(
       `INSERT INTO donations (user_id, project_id, amount, payment_method, transaction_id, status, created_at)
        VALUES ($1, $2, $3, $4, $5, $6, NOW()) RETURNING *`,

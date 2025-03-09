@@ -122,9 +122,8 @@ const HomePage = () => {
     <div className="min-h-screen bg-gray-100">
       {/* الشريط العلوي مع التبويبات */}
       <header
-        className={`fixed top-0 left-0 w-full bg-white shadow-md transition-transform duration-300 ${
-          isHeaderVisible ? "translate-y-0" : "-translate-y-full"
-        }`}
+        className={`fixed top-0 left-0 w-full bg-white shadow-md transition-transform duration-300 ${isHeaderVisible ? "translate-y-0" : "-translate-y-full"
+          }`}
       >
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-xl font-bold">منصة التبرعات</h1>
@@ -178,50 +177,48 @@ const HomePage = () => {
       </header>
 
       {/* محتوى الصفحة */}
-    
-⌄
-{/* محتوى الصفحة */}
-<main className="container mx-auto px-4 pt-24 pb-12">
-  {/* قسم الإعلان المتحرك */}
-  <div className="mb-8 relative overflow-hidden h-96 rounded-lg">
-        <Swiper
-          spaceBetween={0}
-          centeredSlides={true}
-          autoplay={{
-            delay: 8000, // تغيير الصورة كل ثمان ثوانٍ
-            disableOnInteraction: false,
-          }}
-          pagination={{ clickable: true }}
-          navigation={true}
-          className="h-full"
-        >
-          <SwiperSlide>
-            <img src="/advertisement.png" alt="إعلان" className="w-full h-full object-cover" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="/b.png" alt="إعلان" className="w-full h-full object-cover" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="/c.png" alt="إعلان" className="w-full h-full object-cover" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="/d.png" alt="إعلان" className="w-full h-full object-cover" />
-          </SwiperSlide>
-        </Swiper>
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 p-6 text-center z-20">
-          <h2 className="text-white text-3xl font-bold mb-4">سراً وعلانيةً</h2>
-          <p className="text-white text-lg mb-6">
-            تعدّ المنصة الوطنية للتبرعات الحل الأسهل والآمن لإيصال التبرع إلى المحتاج في شتى مناطق ومدن المملكة من خلال عملية تبرع شفافة تحت مظلة وزارة الموارد البشرية والتنمية الاجتماعية.
-          </p>
-          <Link
-            to="/donations"
-            className="bg-green-600 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-green-700 transition duration-300"
-            style={{ zIndex: 10 }}
+      <main className="container mx-auto px-4 pt-24 pb-12">
+        {/* قسم الإعلان المتحرك */}
+        <div className="mb-8 relative overflow-hidden h-96 rounded-lg">
+          <Swiper
+            spaceBetween={0}
+            centeredSlides={true}
+            autoplay={{
+              delay: 8000, // تغيير الصورة كل ثمان ثوانٍ
+              disableOnInteraction: false,
+            }}
+            pagination={{ clickable: true }}
+            navigation={true}
+            className="h-full"
           >
-            تبرع الآن
-          </Link>
+            <SwiperSlide>
+              <img src="/advertisement.png" alt="إعلان" className="w-full h-full object-cover" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src="/b.png" alt="إعلان" className="w-full h-full object-cover" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src="/c.png" alt="إعلان" className="w-full h-full object-cover" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src="/d.png" alt="إعلان" className="w-full h-full object-cover" />
+            </SwiperSlide>
+          </Swiper>
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 p-6 text-center z-20">
+            <h2 className="text-white text-3xl font-bold mb-4">سراً وعلانيةً</h2>
+            <p className="text-white text-lg mb-6">
+              تعدّ المنصة الوطنية للتبرعات الحل الأسهل والآمن لإيصال التبرع إلى المحتاج في شتى مناطق ومدن المملكة من خلال عملية تبرع شفافة تحت مظلة وزارة الموارد البشرية والتنمية الاجتماعية.
+            </p>
+            <Link
+              to="/donations"
+              className="bg-green-600 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-green-700 transition duration-300"
+              style={{ zIndex: 10 }}
+            >
+              تبرع الآن
+            </Link>
+          </div>
         </div>
-      </div>
+
         {/* قسم الإحصاءات */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="bg-white p-6 rounded-lg shadow-md text-center">
@@ -416,7 +413,7 @@ const HomePage = () => {
                   onChange={(e) => setDonationAmount(e.target.value)}
                 />
                 <button
-                  onClick={() => handleDonate("2", "عون الحياة")}
+                  onClick={() => handleDonate("4", "عون الحياة")}
                   className="bg-green-500 text-white px-4 py-2 rounded-lg"
                 >
                   تبرع الآن
@@ -445,7 +442,7 @@ const HomePage = () => {
                   onChange={(e) => setDonationAmount(e.target.value)}
                 />
                 <button
-                  onClick={() => handleDonate("3", "رعاية الأسر اليتيمة")}
+                  onClick={() => handleDonate("5", "رعاية الأسر اليتيمة")}
                   className="bg-green-500 text-white px-4 py-2 rounded-lg"
                 >
                   تبرع الآن
@@ -480,7 +477,7 @@ const HomePage = () => {
                   onChange={(e) => setDonationAmount(e.target.value)}
                 />
                 <button
-                  onClick={() => handleDonate("3", "بسمة عيد")}
+                  onClick={() => handleDonate("6", "بسمة عيد")}
                   className="bg-green-500 text-white px-4 py-2 rounded-lg"
                 >
                   تبرع الآن
@@ -509,7 +506,7 @@ const HomePage = () => {
                   onChange={(e) => setDonationAmount(e.target.value)}
                 />
                 <button
-                  onClick={() => handleDonate("4", "حلم طفل")}
+                  onClick={() => handleDonate("7", "حلم طفل")}
                   className="bg-green-500 text-white px-4 py-2 rounded-lg"
                 >
                   تبرع الآن

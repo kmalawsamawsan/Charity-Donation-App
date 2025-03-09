@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import App from './App'; // استخدم استيراد App بدون .js
 import './index.css';
 import { NotificationsProvider } from './context/NotificationsContext'; // استيراد NotificationsProvider
 
